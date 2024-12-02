@@ -1,0 +1,70 @@
+[
+ 
+  {
+    "name": "assitive technology used by blind people",
+    "desc": "The Advanced Edge AI Navigation System aids blind users by providing real-time object detection and navigation support using computer vision and edge AI..",
+    "image": "hii",
+    "category": "",
+    "links": {
+      "view": "https://github.com/Rajapandi03/project.git",
+      "code": "https://github.com/Rajapandi03/project.git"
+    }
+  },
+
+  
+  {
+    "name": "attanacesystem",
+    "desc": "An attendance system is an automated tool that tracks and manages the presence of individuals, ensuring accurate and efficient attendance reporting",
+    "image": "attanace",
+    "category": "#",
+    "links": {
+      "view": "https://github.com/Rajapandi03/attanacesystem",
+      "code": "https://github.com/Rajapandi03/attanacesystem"
+    }
+    
+  },
+  
+  {
+    "name": "heartdisease",
+    "desc": " heart disease detection uses medical imaging analysis to identify and diagnose cardiovascular conditions with high accuracy.",
+    "image": "heart",
+    "category": "#",
+    "links": {
+      "view": "https://github.com/Rajapandi03/heartdisease_",
+      "code": "https://github.com/Rajapandi03/heartdisease_"
+    }
+  },
+  {
+    "name": "spam mail detection ",
+    "desc": "Spam mail detection using NLP analyzes the text content of emails to identify patterns, keywords, and language cues that classify them as spam or legitimate",
+    "image": "spam",
+    "category": "#",
+    "links": {
+      "view": "https://github.com/Rajapandi03/spam_mail",
+      "code": "https://github.com/Rajapandi03/spam_mail"
+    }
+  },
+  {
+    "name": "Roadsign for autonomous vehicles",
+    "desc": "Road sign recognition for autonomous vehicles uses computer vision and machine learning to detect and interpret traffic signs, enabling safe and automated navigation.",
+    "image": "car",
+    "category": "#",
+    "links": {
+      "view": "https://github.com/Rajapandi03/Road-sign-recognition-for-autonomous-vehicles",
+      "code": "https://github.com/Rajapandi03/Road-sign-recognition-for-autonomous-vehicles"
+    }
+  },
+  {
+    "name": "Wildlife Detection",
+    "desc": "Wildlife Detection is a real-time system that utilizes YOLOv8 for detecting and classifying wildlife in video streams, drawing bounding boxes around identified animals with confidence scores.",
+    "image": "animal",
+    "category": "basicweb",
+    "links": {
+      "view": "https://github.com/Rajapandi03/Wildlife_Detection",
+      "code": "https://github.com/Rajapandi03/Wildlife_Detection"
+    }
+  }
+
+ 
+  
+]

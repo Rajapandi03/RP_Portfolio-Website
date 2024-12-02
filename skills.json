@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Python",
+        "icon": "icons8-python-96.png"
+    },
+
+    {
+        "name": "C",
+        "icon": "icons8-c-programming-96.png"
+    },
+    
+    {
+        "name": "C++",
+        "icon": "icons8-c++-96.png"
+    },
+     {
+        "name": "Java",
+        "icon": "icons8-java-96.png"
+    },
+   
+    {
+        "name": "Machine learning",
+        "icon": "2172891.png"
+    },
+   
+
+    {
+        "name": "deep learning",
+        "icon": "2103832.png"
+    },
+    {
+        "name": "NLP",
+        "icon": "9716595.png"
+    },
+    {
+        "name": "computer vision ",
+        "icon": "icons8-opencv-96.png"
+    },
+    {
+        "name": "data analysis",
+        "icon": "icons8-data-analysis-96.png"
+    },
+    
+    {
+        "name": "tensorflow",
+        "icon": "tensorflow.png"
+    },
+    {
+        "name": "pythorch",
+        "icon": "icons8-pytorch-64.png"
+    },
+    {
+        "name": "keras",
+        "icon": "icons8-keras-96.png"
+    }
+     
+]
