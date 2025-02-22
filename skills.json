@@ -17,6 +17,11 @@
         "name": "Java",
         "icon": "icons8-java-96.png"
     },
+
+    {
+        "name": "Generative AI",
+        "icon": "logo.png"
+    },
    
     {
         "name": "Machine learning",

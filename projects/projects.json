@@ -13,13 +13,13 @@
 
   
   {
-    "name": "attanacesystem",
-    "desc": "An attendance system is an automated tool that tracks and manages the presence of individuals, ensuring accurate and efficient attendance reporting",
-    "image": "attanace",
+    "name": "Retrieval-Augmented Generation (RAG)",
+    "desc": "Designed an AI-powered RAG system that processes documents, websites, and Excel sheets to provide accurate answers to queries.",
+    "image": "rag",
     "category": "#",
     "links": {
-      "view": "https://github.com/Rajapandi03/attanacesystem",
-      "code": "https://github.com/Rajapandi03/attanacesystem"
+      "view": "https://github.com/Rajapandi03/RAG_excel_doc/blob/main/Excel.mp4",
+      "code": "https://github.com/Rajapandi03/RAG_excel_doc"
     }
     
   },
@@ -34,6 +34,17 @@
       "code": "https://github.com/Rajapandi03/heartdisease_"
     }
   },
+  {
+    "name": "AI Agents for Specialized Domains ",
+    "desc": "Developed AI agents for various specialized domains. The AI Coding Agent provides precise coding solutions for programming-related queries.",
+    "image": "agent",
+    "category": "basicweb",
+    "links": {
+      "view": "https://github.com/Rajapandi03/coding-ai-agents/blob/main/deepseek.mp4",
+      "code": "https://github.com/Rajapandi03/coding-ai-agents"
+    }
+  }
+,
   {
     "name": "spam mail detection ",
     "desc": "Spam mail detection using NLP analyzes the text content of emails to identify patterns, keywords, and language cues that classify them as spam or legitimate",
@@ -54,7 +65,7 @@
       "code": "https://github.com/Rajapandi03/Road-sign-recognition-for-autonomous-vehicles"
     }
   },
-  {
+    {
     "name": "Wildlife Detection",
     "desc": "Wildlife Detection is a real-time system that utilizes YOLOv8 for detecting and classifying wildlife in video streams, drawing bounding boxes around identified animals with confidence scores.",
     "image": "animal",
@@ -62,9 +73,7 @@
     "links": {
       "view": "https://github.com/Rajapandi03/Wildlife_Detection",
       "code": "https://github.com/Rajapandi03/Wildlife_Detection"
-    }
-  }
-
- 
+    }}
+  
   
 ]
