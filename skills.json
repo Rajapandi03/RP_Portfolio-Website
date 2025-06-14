@@ -1,62 +1,40 @@
 [
-    {
-        "name": "Python",
-        "icon": "icons8-python-96.png"
-    },
-
-    {
-        "name": "C",
-        "icon": "icons8-c-programming-96.png"
-    },
-    
-    {
-        "name": "C++",
-        "icon": "icons8-c++-96.png"
-    },
-     {
-        "name": "Java",
-        "icon": "icons8-java-96.png"
-    },
-
-    {
-        "name": "Generative AI",
-        "icon": "logo.png"
-    },
-   
-    {
-        "name": "Machine learning",
-        "icon": "2172891.png"
-    },
-   
-
-    {
-        "name": "deep learning",
-        "icon": "2103832.png"
-    },
-    {
-        "name": "NLP",
-        "icon": "9716595.png"
-    },
-    {
-        "name": "computer vision ",
-        "icon": "icons8-opencv-96.png"
-    },
-    {
-        "name": "data analysis",
-        "icon": "icons8-data-analysis-96.png"
-    },
-    
-    {
-        "name": "tensorflow",
-        "icon": "tensorflow.png"
-    },
-    {
-        "name": "pythorch",
-        "icon": "icons8-pytorch-64.png"
-    },
-    {
-        "name": "keras",
-        "icon": "icons8-keras-96.png"
-    }
-     
+  {
+    "category": "Generative & Agentic AI",
+    "skills": [
+      { "name": "LLM Agents", "icon": "assets/images/skills/bot.png" },
+      { "name": "RAG Systems", "icon": "assets/images/skills/artificial-intelligence.png" },
+      { "name": "LangChain", "icon": "assets/images/skills/09.png" },
+      { "name": "Hugging Face", "icon": "assets/images/skills/huggingface.png" }
+    ]
+  },
+  {
+    "category": "Machine Learning & Deep Learning",
+    "skills": [
+      { "name": "TensorFlow", "icon": "assets/images/skills/TensorFlow_logo.svg_.png" },
+      { "name": "PyTorch", "icon": "icons8-pytorch-64.png" },
+      { "name": "Keras", "icon": "icons8-keras-96.png" },
+      { "name": "Computer Vision", "icon": "10328698.png" },
+      { "name": "NLP", "icon": "9716595.png" }
+    ]
+  },
+  {
+    "category": "Programming & Databases",
+    "skills": [
+      { "name": "Python", "icon": "icons8-python-96.png" },
+      { "name": "Java", "icon": "icons8-java-96.png" },
+       { "name": "C", "icon": "assets/images/skills/letter-c.png" },
+      { "name": "C++", "icon": "icons8-c++-96.png" },
+      { "name": "MySQL", "icon": "assets/images/skills/sql.jpg" }
+    ]
+  },
+  {
+    "category": "Developer Tools & Platforms",
+    "skills": [
+      { "name": "Git", "icon": "assets/images/skills/git.png" },
+      { "name": "FastAPI", "icon": "assets/images/skills/fast.png" },
+      { "name": "Streamlit", "icon": "assets/images/skills/streamlit0.png" },
+      { "name": "Raspberry Pi", "icon": "assets/images/skills/raspberry.png" }
+    ]
+  }
 ]

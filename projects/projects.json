@@ -1,6 +1,37 @@
 [
  
   {
+    "name": " AI E-Commerce Product Authenticity Checker & Price Comparator",
+    "desc": "Developed an AI tool to detect counterfeit products, compare prices, suggest reliable alternatives, and respond to user queries via an AI chatbot to enhance e-commerce safety and trust",
+    "image": "ecommece",
+    "category": "",
+    "links": {
+      "view": "https://huggingface.co/spaces/rajapandi2618/fake-product-detection",
+      "code": "https://github.com/Rajapandi03/-Fake-Product-Detection-AI-Chatbot"
+    }
+  },
+  {
+    "name": " JurisGPT Legal-Ease – AI Legal Assistant",
+    "desc": "Created a legal assistant capable of answering Indian legal queries, suggesting strategies based on case precedents, and improving access to legal information for the public and professionals.",
+    "image": "juris",
+    "category": "",
+    "links": {
+      "view": "https://huggingface.co/spaces/rajapandi2618/Juris-Legal-Ease",
+      "code": "#"
+    }
+  },
+  {
+    "name": " Multi-Agent AI Market Briefing Assistant",
+    "desc": "Built a real-time financial assistant using multiple intelligent agents for data retrieval, summarization, news scraping, and voice input/output. Delivers spoken and visual market insights for traders. ",
+    "image": "agentmulti",
+    "category": "",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+
+  {
     "name": "assitive technology used by blind people",
     "desc": "The Advanced Edge AI Navigation System aids blind users by providing real-time object detection and navigation support using computer vision and edge AI..",
     "image": "hii",
@@ -64,16 +95,6 @@
       "view": "https://github.com/Rajapandi03/Road-sign-recognition-for-autonomous-vehicles",
       "code": "https://github.com/Rajapandi03/Road-sign-recognition-for-autonomous-vehicles"
     }
-  },
-    {
-    "name": "Wildlife Detection",
-    "desc": "Wildlife Detection is a real-time system that utilizes YOLOv8 for detecting and classifying wildlife in video streams, drawing bounding boxes around identified animals with confidence scores.",
-    "image": "animal",
-    "category": "basicweb",
-    "links": {
-      "view": "https://github.com/Rajapandi03/Wildlife_Detection",
-      "code": "https://github.com/Rajapandi03/Wildlife_Detection"
-    }}
-  
+  }
   
 ]

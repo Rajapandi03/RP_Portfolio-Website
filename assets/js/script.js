@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["AI developer", "Generative AI ","machine learning", "deep learning", "computer vision", "natural language processing","data analytics"],
+    strings: ["AI developer", "Agentic AI Specialist","Generative AI Developer", "RAG Systems Engineer", "computer vision", "natural language processing",],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -232,10 +232,43 @@ srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .content .resumebtn', { delay: 200 });
 
 
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
+// DELETE your old showSkills function and REPLACE it with this one.
 
+function showSkills(data) {
+    let skillsContainer = document.getElementById("skillsContainer");
+    let skillHTML = "";
+
+    // Loop through each CATEGORY object from skills.json
+    data.forEach(categoryData => {
+        
+        // 1. Add the category title. It will become a grid item.
+        skillHTML += `<h3 class="category-title">${categoryData.category}</h3>`;
+
+        // 2. Add all skill bars for this category directly into the grid.
+        categoryData.skills.forEach(skill => {
+            skillHTML += `
+            <div class="bar">
+              <div class="info">
+                <img src="${skill.icon}" alt="${skill.name}" />
+                <span>${skill.name}</span>
+              </div>
+            </div>`;
+        });
+    });
+
+    // Set the complete HTML into the container
+    skillsContainer.innerHTML = skillHTML;
+
+    // Re-run the Scroll Reveal animation for the new elements
+    const srtop = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 1000,
+        reset: true
+    });
+    srtop.reveal('.skills .container .bar', { delay: 200, interval: 100 });
+    srtop.reveal('.skills .container .category-title', { delay: 100 });
+}
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
 

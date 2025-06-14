@@ -512,6 +512,45 @@ header .navbar ul li a:hover {
   font-family: "Poppins";
   margin-left: 0.5rem;
 }
+/* ADD THIS TO YOUR CSS FILE */
+
+/* Styles the new category titles */
+.skills .container .category-title {
+  /* This is the most important rule: makes the title span all 6 columns */
+  grid-column: 1 / -1;
+
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2.5rem; /* Adds space above each new category */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid rgb(255, 230, 0); /* Uses your yellow accent color */
+}
+
+/* Ensure images within the bars have a consistent size */
+.skills .container .bar .info img {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+}
+
+/* On smaller screens, you might want fewer columns */
+@media (max-width: 1200px) {
+  .skills .container .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .skills .container .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* skills media queries starts*/
 @media screen and (max-width: 600px) {
   .skills .container {

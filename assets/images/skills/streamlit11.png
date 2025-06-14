@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head itemscope="" itemscope itemtype="http://schema.org/WebPage">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>How to use Streamlit in Python - Python Warriors</title>
+<meta name='robots' content='max-image-preview:large' />
+<meta name="description" content="Easy to make UI to share your apps/ portfolio and show your data. You get everything with streamlit and you use it in python."/>
+<link rel="canonical" href="https://pythonwarriors.com/how-to-use-streamlit-in-python/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to use Streamlit in Python - Python Warriors" />
+<meta property="og:description" content="Easy to make UI to share your apps/ portfolio and show your data. You get everything with streamlit and you use it in python." />
+<meta property="og:url" content="https://pythonwarriors.com/how-to-use-streamlit-in-python/" />
+<meta property="og:site_name" content="Python Warriors" />
+<meta property="article:tag" content="streamlit" />
+<meta property="article:section" content="Python" />
+<meta property="article:published_time" content="2023-04-09T11:44:31+00:00" />
+<meta property="og:image" content="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png" />
+<meta property="og:image:secure_url" content="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Easy to make UI to share your apps/ portfolio and show your data. You get everything with streamlit and you use it in python." />
+<meta name="twitter:title" content="How to use Streamlit in Python - Python Warriors" />
+<meta name="twitter:image" content="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://pythonwarriors.com/#organization","name":"","url":"https://pythonwarriors.com/","sameAs":[]},{"@type":"WebSite","@id":"https://pythonwarriors.com/#website","url":"https://pythonwarriors.com/","name":"Python Warriors","publisher":{"@id":"https://pythonwarriors.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://pythonwarriors.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#webpage","url":"https://pythonwarriors.com/how-to-use-streamlit-in-python/","inLanguage":"en-US","name":"How to use Streamlit in Python - Python Warriors","isPartOf":{"@id":"https://pythonwarriors.com/#website"},"image":{"@type":"ImageObject","@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#primaryimage","url":"https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png","caption":""},"primaryImageOfPage":{"@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#primaryimage"},"datePublished":"2023-04-09T11:44:31+00:00","dateModified":"2023-04-09T11:44:31+00:00","description":"Easy to make UI to share your apps/ portfolio and show your data. You get everything with streamlit and you use it in python."},{"@type":"Article","@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#article","isPartOf":{"@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#webpage"},"author":{"@id":"https://pythonwarriors.com/author/anoop/#author","name":"Admin"},"publisher":{"@id":"https://pythonwarriors.com/#organization"},"headline":"How to use Streamlit in Python","datePublished":"2023-04-09T11:44:31+00:00","dateModified":"2023-04-09T11:44:31+00:00","commentCount":0,"mainEntityOfPage":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#webpage","image":{"@id":"https://pythonwarriors.com/how-to-use-streamlit-in-python/#primaryimage"},"keywords":"streamlit","articleSection":"Python"},{"@type":"Person","@id":"https://pythonwarriors.com/author/anoop/#author","name":"Admin","image":{"@type":"ImageObject","@id":"https://pythonwarriors.com/#personlogo","url":"https://secure.gravatar.com/avatar/27317d01defe07b37ada060dfc8992ac?s=96&d=monsterid&r=g","caption":"Admin"},"sameAs":[]}]}</script>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://pythonwarriors.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://pythonwarriors.com/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://pythonwarriors.com/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='kirhero-style-css' href='https://pythonwarriors.com/wp-content/themes/orionwp/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://pythonwarriors.com/wp-content/themes/orionwp/assets/css/alien/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='kirhero-google-font-open-sans-css' href='//fonts.googleapis.com/css?family=Open+Sans%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i' type='text/css' media='all' />
+<link rel='stylesheet' id='kirhero-google-font-roboto-css' href='//fonts.googleapis.com/css?family=Roboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i' type='text/css' media='all' />
+<link rel='stylesheet' id='kirhero-google-font-montserrat-css' href='//fonts.googleapis.com/css?family=Montserrat%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdreams-asl-basic-css' href='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/css/style.basic.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdreams-asl-instance-css' href='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/css/style-curvy-blue.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://pythonwarriors.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/themes/orionwp/assets/js/alien/jquery.matchHeight.js' id='kirhero-matchheight-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/themes/orionwp/assets/js/main.js' id='kirhero-main-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/themes/orionwp/assets/js/alien/jquery.sidr.min.js' id='Sidr-js'></script>
+<script type='text/javascript' id='whp8533front.js8336-js-extra'>
+/* <![CDATA[ */
+var whp_local_data = {"add_url":"https:\/\/pythonwarriors.com\/wp-admin\/post-new.php?post_type=event","ajaxurl":"https:\/\/pythonwarriors.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/wp-security-hardening/modules/js/front.js' id='whp8533front.js8336-js'></script>
+<link rel="https://api.w.org/" href="https://pythonwarriors.com/wp-json/" /><link rel="alternate" type="application/json" href="https://pythonwarriors.com/wp-json/wp/v2/posts/899" />
+<link rel='shortlink' href='https://pythonwarriors.com/?p=899' />
+<link rel="alternate" type="application/json+oembed" href="https://pythonwarriors.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpythonwarriors.com%2Fhow-to-use-streamlit-in-python%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://pythonwarriors.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpythonwarriors.com%2Fhow-to-use-streamlit-in-python%2F&#038;format=xml" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//pythonwarriors.com/?wordfence_lh=1&hid=8E7A5AB917ED02824BAAE2174213A62B');
+</script><!-- Kirhero CSS -->
+<style type="text/css">
+.kirhero-frontpage a{color:#6b6b6b;}.kirhero-frontpage a:hover{color:#0a0a0a;}.site-header{height:80px;}.header-widget-area{height:80px;}.site-header .wrap{height:100%}.site-header{background-color:#ffffff;}.nav-primary .sub-menu{background-color:#ffffff;}.site-header.navbar-transparent{background-color:rgba(158,158,158,0.14);}.kirhero-frontpage .site-header.navbar-transparent .genesis-nav-menu>li>a,.kirhero-frontpage .site-header.navbar-transparent .kirhero-text,.kirhero-frontpage .site-header.navbar-transparent .site-description, .site-header.navbar-transparent .site-title a,.kirhero-frontpage .site-header.navbar-transparent .menu-primary .current-menu-item a{color:#606060 !important;}.site-header{position:fixed;z-index:99999;left:0;right:0}.site-inner-wrap {margin-top: 80px}.site-header{-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.15);-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.15);box-shadow: 0 1px 4px rgba(0,0,0,0.15);}.nav-primary{float:right;}.genesis-nav-menu a{color:#0a0a0a;}.kirhero-text{color:#0a0a0a;}.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{background-color:#0a0a0a;}.genesis-nav-menu a:hover{color:#000000;}.nav-primary .sub-menu a:hover {color:#000000;}.site-header{max-width: 100%;width:100%}.nav-primary{padding-top:4px;}.genesis-nav-menu .current-menu-item > a:after, .genesis-nav-menu>li:hover>a:after{background-color:#235984}.site-title a{color:#777777;}.site-title a:hover{color:#000000;}.site-description{color:#000000;}.custom-logo{height:70px;}.custom-logo{width:200px;}.title-area{padding-top:4px;}.title-area{padding-left:15px;}.nav-primary .sub-menu a {color:#0a0a0a;}.nav-primary .sub-menu a:hover {color:#494949;}.menu-primary .current-menu-item a {color:#000000 !important;}.trail-item a{color:#ffffff;}.site-inner, .wrap {max-width:1000px;}a {color:#0a0202;}.entry-title a, .sidebar .widget-title a {color:#0a0202;}a:hover {color:#000000;}.entry-title a:hover, .sidebar .widget-title a:hover {color:#000000;}.woocommerce div.product div.images .open-image, .wcmenucart-details.count, .woocommerce-message a, .woocommerce-error a, .woocommerce-info a, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .owp-product-nav li a.owp-nav-link:hover, .woocommerce div.product.owp-tabs-layout-vertical .woocommerce-tabs ul.tabs li a:after, .woocommerce .widget_product_categories li.current-cat a ~ .count, .woocommerce .widget_product_categories li.current-cat a:before, .woocommerce .widget_layered_nav li.chosen a ~ .count, .woocommerce .widget_layered_nav li.chosen a:before, #owp-checkout-timeline .active .timeline-wrapper, .bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count, input[type="button"], input[type="reset"], input[type="submit"], button[type="submit"], .button, #site-navigation-wrap .dropdown-menu >li.btn >a >span, .thumbnail:hover i, .post-quote-content, .omw-modal .omw-close-modal, body .contact-info-widget.big-icons li:hover i {background-color:#0a0a0a;}.woocommerce div.product div.images .open-image:hover, .woocommerce-error a:hover, .woocommerce-info a:hover, .woocommerce-message a:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button[type="submit"]:hover, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button[type="submit"]:focus, .button:hover, #site-navigation-wrap .dropdown-menu >li.btn >a:hover >span, .post-quote-author, .omw-modal .omw-close-modal:hover {background-color:#3a3a3a;}.woocommerce table.shop_table, .woocommerce table.shop_table td, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce table.shop_table tth, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th, .woocommerce .order_details, .woocommerce .shop_table.order_details tfoot th, .woocommerce .shop_table.customer_details th, .woocommerce .cart-collaterals .cross-sells, .woocommerce-page .cart-collaterals .cross-sells, .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals, .woocommerce .cart-collaterals h2, .woocommerce .cart-collaterals h2, .woocommerce .cart-collaterals h2, .woocommerce-cart .cart-collaterals .cart_totals .order-total th, .woocommerce-cart .cart-collaterals .cart_totals .order-total td, .woocommerce ul.order_details, .woocommerce .shop_table.order_details tfoot th, .woocommerce .shop_table.customer_details th, .woocommerce .woocommerce-checkout #customer_details h3, .woocommerce .woocommerce-checkout h3#order_review_heading, .woocommerce-checkout #payment ul.payment_methods, .woocommerce-checkout form.login, .woocommerce-checkout form.checkout_coupon, .woocommerce-checkout-review-order-table tfoot th, .woocommerce-checkout #payment, .woocommerce ul.order_details, .woocommerce #customer_login >div, .woocommerce .col-1.address, .woocommerce .col-2.address, .woocommerce-checkout .woocommerce-info, .woocommerce div.product form.cart, .product_meta, .woocommerce div.product .woocommerce-tabs ul.tabs, .woocommerce #reviews #comments ol.commentlist li .comment_container, p.stars span a, .woocommerce ul.product_list_widget li, .woocommerce .widget_shopping_cart .cart_list li, .woocommerce.widget_shopping_cart .cart_list li, .woocommerce ul.product_list_widget li:first-child, .woocommerce .widget_shopping_cart .cart_list li:first-child, .woocommerce.widget_shopping_cart .cart_list li:first-child, .widget_product_categories li a, .woocommerce .products.list .product, table th, table td, hr, .content-area, body.content-left-sidebar #content-wrap .content-area, .content-left-sidebar .content-area, #top-bar-wrap, #site-header, #site-header.top-header #search-toggle, .dropdown-menu ul li, .centered-minimal-page-header, .blog-entry.post, .blog-entry.grid-entry .blog-entry-inner, .blog-entry.thumbnail-entry .blog-entry-bottom, .single-post .entry-title, .single .entry-share-wrap .entry-share, .single .entry-share, .single .entry-share ul li a, .single nav.post-navigation, .single nav.post-navigation .nav-links .nav-previous, #author-bio, #author-bio .author-bio-avatar, #author-bio .author-bio-social li a, #related-posts, #comments, .comment-body, #respond #cancel-comment-reply-link, #blog-entries .type-page, .page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span, body #wp-calendar caption, body #wp-calendar th, body #wp-calendar tbody, body .contact-info-widget.default i, body .contact-info-widget.big-icons i, body .posts-thumbnails-widget li, body .tagcloud a, .widget-title-2 {border-color:#303030;}.general-page-header {background-image: linear-gradient(140deg, #235984 0%, #235984 100%);}.general-page-header {background-image: linear-gradient(140deg, #235984 0%, #002160 100%);}.general-page-header {color:#ffffff;}.general-page-header {padding-top:50px;}.general-page-header {padding-bottom:50px;}.blog .blog-entry-inner, .archive .blog-entry-inner{-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.15);-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.15);box-shadow: 0 1px 4px rgba(0,0,0,0.15);}.blog .thumbnail, .archive .thumbnail{margin-left: -20px;margin-right: -20px;}.blog .thumbnail, .archive .thumbnail{margin-left: auto;margin-right: auto;}.single-post .general-page-header {color:#0a0a0a;}.single-post .trail-item a{color:#0a0a0a;}.entry {margin-bottom:25px;}.blog .blog-entry-inner {padding-bottom:25px;}.blog .blog-entry-inner {padding-top:25px;}.sidebar-secondary .widget .widget-span,.sidebar-primary .widget .widget-span{background-color:#ededed;}.sidebar-secondary .widget .widget-title-2,.sidebar-primary .widget .widget-title-2{border-color:#dddddd;}.sidebar-secondary .widget a,.sidebar-primary .widget a{color:#0a0a0a;}.sidebar-secondary .widget ,.sidebar-primary .widget {color:#0a0a0a;}.sidebar-secondary .widget a:hover,.sidebar-primary .widget a:hover{color:#595959;}.sidebar-secondary>.sidebar-wrap,.sidebar-primary .sidebar-wrap{padding-right:15px;}.sidebar-secondary>.sidebar-wrap,.sidebar-primary .sidebar-wrap{padding-left:15px;}.sidebar-secondary>.sidebar-wrap,.sidebar-primary .sidebar-wrap{padding-bottom:15px;}.site-footer {background-color:#323437;}.site-footer p{color:#999999;}footer.site-footer .widget, footer.site-footer .widget caption{color:#999999;}footer.site-footer a{color:#0a0a0a ;}footer.site-footer .genesis-nav-menu a{color:#0a0a0a ;}footer.site-footer hr{border-color:rgba(255,255,255,0.2) ;}footer.site-footer a:hover{color:#bfbfbf;}footer.site-footer .genesis-nav-menu a:hover{color:#bfbfbf;}footer.site-footer .widget-title{color:#0a0a0a;}.frontpage-content-wrap {background-color:#ffffff;}.frontpage-content-wrap a{color:#000000;}.frontpage-content-wrap a:hover{color:#7f7f7f;}.entry-content.frontpage-content {color:#666666;}.frontpage-slide-wrap {background-color:#ff4f4f;}.frontpage-slide-wrap {background-image: linear-gradient(140deg, #ff4f4f 0%, #28ff57 100%);}.kirhero-frontpage .frontpage-slide-title,.kirhero-frontpage .frontpage-slide-text {color:#ffffff;}.frontpage-slide-btn {background-color:#ffffff;}.kirhero-frontpage .frontpage-slide-btn {color:#373278;}.kirhero-frontpage .frontpage-slide-btn:hover {color:#ffffff; border-color:#ffffff}.frontpage-slide-btn {border-radius:50px;}.fp_action_button_a {background-color:#ffffff;}.kirhero-frontpage .fp_action_button_a {color:#373278;}.kirhero-frontpage .fp_action_button_a:hover {color:#ffffff; border-color:#ffffff}.kirhero-frontpage .fp_action_button_a {border-radius:50px;}.frontpage-team-wrap a{color:#000000;}.frontpage-team-wrap a:hover{color:#dd3333;}.frontpage-team-wrap {background-color:#ffffff;}.frontpage-team-title, .fp_team_h3 {color:#000000;}.frontpage-team-text, .fp_team_member_text {color:#666666;}.frontpage-blog-wrap {background-color:#ffffff;}.frontpage-blog-title {color:#000000;}.frontpage-blog-text, .fp_blog_p {color:#666666;}.frontpage-blog-wrap a{color:#000000;}.frontpage-blog-wrap a:hover{color:#9e9e9e;}.frontpage-features-wrap {background-image: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);}.frontpage-features-wrap {background-image: linear-gradient(140deg, #ffffff 0%, #e5e5e5 100%);}.frontpage-features-title {color:#000000;}.frontpage-features-text, .fp_features_h4, .fp_features_member_text {color:#666666;}.frontpage-action-wrap {background-image: linear-gradient(140deg, #0a0606 0%, #0a0606 100%);}.frontpage-action-wrap {background-image: linear-gradient(140deg, #0a0606 0%, #2642d3 100%);}.frontpage-action-title, .frontpage-action-subtitle {color:#ffffff;}.frontpage-action-text {color:#ffffff;}.frontpage-subscribe-wrap {background-image: linear-gradient(140deg, #ebb0e7 0%, #ebb0e7 100%);}.frontpage-subscribe-wrap {background-image: linear-gradient(140deg, #ebb0e7 0%, #ebb0e7 100%);}.frontpage-subscribe-text {color:#ffffff;}.frontpage-subscribe-shortcode-div {color:#ffffff;}.fp_subscribe_widget .widget {color:#ffffff;}.frontpage-subscribe-title {color:#ffffff;}.fp_subscribe_widget{background-color:#ffffff;}.frontpage-subscribe-widget-wrap, .frontpage-subscribe-widget-wrap *{color:#666666;}.frontpage-subscribe-widget-wrap {width:55%;}.frontpage-contact-wrap {background-image: linear-gradient(140deg, #ebb0e7 0%, #ebb0e7 100%);}.frontpage-contact-wrap {background-image: linear-gradient(140deg, #ebb0e7 0%, #2642d3 100%);}.frontpage-contact-title, .frontpage-contact-text, .frontpage-widget-contact, .frontpage-contact-content {color:#ffffff;}.frontpage-shortcode-wrap {background-color:rgba(0,0,0,0.28);}.kirhero-frontpage .frontpage-widget-contact,.kirhero-frontpage .frontpage-contact-shortcode-title,.kirhero-frontpage .frontpage-shortcode-div * {color:#ffffff;}
+</style>				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link rel="preload" as="style" href="//fonts.googleapis.com/css?family=Open+Sans&display=swap" />
+				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&display=swap" media="all" />
+							            <style>
+				            
+					div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
+						font-size: 0px !important;
+						color: rgba(0, 0, 0, 0);
+					}
+					div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
+						font-size: 11px !important;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+					}
+					.asl_w_container {
+						width: 100%;
+						margin: 0px 0px 0px 0px;
+						min-width: 200px;
+					}
+					div[id*='ajaxsearchlite'].asl_m {
+						width: 100%;
+					}
+					div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
+						font-weight: bold;
+						color: rgba(217, 49, 43, 1);
+						background-color: rgba(238, 238, 238, 1);
+					}
+					div[id*='ajaxsearchliteres'].wpdreams_asl_results .results img.asl_image {
+						width: 70px;
+						height: 70px;
+						object-fit: cover;
+					}
+					div.asl_r .results {
+						max-height: none;
+					}
+				
+						div.asl_r.asl_w.vertical .results .item::after {
+							display: block;
+							position: absolute;
+							bottom: 0;
+							content: '';
+							height: 1px;
+							width: 100%;
+							background: #D8D8D8;
+						}
+						div.asl_r.asl_w.vertical .results .item.asl_last_item::after {
+							display: none;
+						}
+								            </style>
+			            <link rel="icon" href="https://pythonwarriors.com/wp-content/uploads/2021/04/cropped-cropped-pw_logo_v2_sm-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://pythonwarriors.com/wp-content/uploads/2021/04/cropped-cropped-pw_logo_v2_sm-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://pythonwarriors.com/wp-content/uploads/2021/04/cropped-cropped-pw_logo_v2_sm-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://pythonwarriors.com/wp-content/uploads/2021/04/cropped-cropped-pw_logo_v2_sm-2-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.format-standard .entry-header {
+	display: none;
+}
+
+.blog-entry-inner .entry-header {
+ display: block;
+}
+
+h2 {
+	text-transform: none !important;
+}
+
+h2.page-header-general-title {
+	color: #fff !important;
+}
+
+.general-page-header {
+    padding-bottom: 14px;
+}
+
+.general-page-header {
+    padding-top: 20px;
+	  background: linear-gradient(299deg, rgba(5,36,61,1) 0%, rgba(22,78,124,1) 22%, rgba(22,78,124,1) 48%, rgba(22,78,124,1) 72%, rgba(4,39,69,1) 100%) !important;
+	 box-shadow: 0px 10px 22px #c0c0c0;
+}
+
+.blog-entry-inner {
+    border: 1px solid #d3d3d3;    
+	box-shadow: none;
+	transition: 0.3s;
+	border-radius: 12px;
+}
+
+.blog-entry-inner:hover {
+		transition: 0.3s;
+	  border: 1px solid #8e8e8e;    
+	box-shadow: 10px 10px 20px #d9d9d9;
+}
+
+.more-link {
+    background: #eee;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #000;
+	  font-weight: 400;
+}
+
+.blog-entry-inner:hover .more-link {
+    background: #154376;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.trail-item, .trail-item a {
+    display: inline-block;
+    font-size: 12px;
+    color: #fff !important;
+}
+
+footer.site-footer .widget-title{
+	color: #ffffff;
+	
+}
+
+.site-footer {
+background-color: #164e7c !important;
+	background: rgb(5,36,61);
+background: linear-gradient(299deg, rgba(5,36,61,1) 0%, rgba(22,78,124,1) 22%, rgba(22,78,124,1) 48%, rgba(22,78,124,1) 72%, rgba(4,39,69,1) 100%);
+}
+
+.entry-content {
+	font-size: 16px !important;
+	color: #000000 !important;
+	font-weight: 300 !important;
+}
+
+.thumbnail-link-banner {
+	display: none;
+}
+
+.single-post .entry-content{
+	font-size: 18px !important;
+	color: #000000 !important;
+	
+}
+
+.textwidget p, .footer-p, .footer-p a {
+	color: #fff !important;
+}
+
+#search-5 input {
+    background-color: #b4deff;
+    border: 1px solid #164e7c;
+    width: 65%;
+    border-radius: 20px 30px 30px 20px;
+    height: 35px;
+}
+
+.thumbnail-link img {
+	 border-radius: 10px;
+}
+
+.meta-author {
+	background: #e0e0e0;
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+.meta-date, .meta-categories {
+	font-weight: 500 !important;
+}
+
+.page-header-general-title {
+	text-shadow: 2px 2px 10px #031f35;
+}
+
+.entry-content code {
+background-color: #363636 !important;
+    color: #ddd !important;
+    border-radius: 6px !important;
+    background: -webkit-linear-gradient( 329deg, #0a0a0a, #1c1c1c, #000000 170%);
+}
+
+footer.site-footer a {
+    color: #f1ebeb;
+}
+		</style>
+		<!-- Kirhero CSS fonts -->
+<style type="text/css">
+body,body > div{font-family:Open Sans;font-size:14px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1;color:#222222;}.menu-primary, .genesis-nav-menu .sub-menu a{font-family:Roboto;font-size:12px;font-weight:400;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:0.8;}h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title, .entry-comments h3{font-family:Montserrat;font-weight:600;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.5;color:#0a0a0a;}.single-page-header,.single-page-header .wrap h2,.general-page-header,.general-page-header .wrap h2,.breadcrumb-trail{font-family:Montserrat;font-size:30px;font-weight:500;font-style:normal;text-transform:capitalize;letter-spacing:0.1px;line-height:1;}.site-title{font-family:Roboto;font-size:21px;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:2px;line-height:1.3;}.entry-content{font-family:Open Sans;font-size:13px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;color:#666666;}.blog .entry-title,.search .entry-title, .archive .entry-title{font-family:Montserrat;font-size:21px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.single-post .entry-title{font-family:Montserrat;font-size:41px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.2;color:#666666;}.single-post .entry-content{font-family:Open Sans;font-size:16px;font-style:normal;text-transform:none;letter-spacing:0.3px;line-height:1.5;color:#000000;}.widget-title-2 .widget-span{font-family:Montserrat;font-size:13px;font-weight:400;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1;color:#0a0a0a;}.kirhero-frontpage .frontpage-slide-title{font-family:Montserrat;font-size:60px;font-weight:600;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.2;}.kirhero-frontpage .frontpage-slide-text{font-family:Open Sans;font-size:18px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1;}.kirhero-frontpage .frontpage-slide-btn{font-family:Montserrat;font-size:16px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1;}.kirhero-frontpage .frontpage-content-wrap h2{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-content-wrap p{font-family:Open Sans;font-size:14px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-team-title{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-team-text{font-family:Open Sans;font-size:18px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_team_h3{font-family:Montserrat;font-size:32px;font-weight:600;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_team_member_text{font-family:Open Sans;font-size:16px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.8;}.kirhero-frontpage .frontpage-blog-title{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-blog-text{font-family:Open Sans;font-size:18px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_blog_h2{font-family:Montserrat;font-size:18px;font-weight:500;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_blog_p{font-family:Open Sans;font-size:14px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.4;}.kirhero-frontpage .frontpage-features-title{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-features-text{font-family:Open Sans;font-size:18px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_features_h4{font-family:Montserrat;font-size:18px;font-weight:600;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_features_member_text{font-family:Open Sans;font-size:14px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.8;}.kirhero-frontpage .frontpage-action-title{font-family:Montserrat;font-size:46px;font-weight:500;font-style:normal;text-transform:capitalize;letter-spacing:0.1px;line-height:1.1;}.kirhero-frontpage .frontpage-action-subtitle{font-family:Montserrat;font-size:35px;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-action-text{font-family:Open Sans;font-size:15px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .fp_action_button_a{font-family:Montserrat;font-size:16px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1;}.kirhero-frontpage .frontpage-subscribe-title,.kirhero-frontpage .fp_subscribe_wrap .widget-title{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-subscribe-text, .kirhero-frontpage .fp_subscribe_wrap .widget{font-family:Open Sans;font-size:18px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .frontpage-contact-title{font-family:Montserrat;font-size:36px;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-contact-text{font-family:Open Sans;font-size:18px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.5;}.kirhero-frontpage .frontpage-contact-shortcode-title,.kirhero-frontpage .frontpage-shortcode-wrap .widget-title{font-family:Montserrat;font-size:25px;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.3;}.kirhero-frontpage .frontpage-contact-content,.kirhero-frontpage .frontpage-shortcode-wrap .widget{font-family:Open Sans;font-size:14px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.3;}footer.site-footer .widget-title{font-family:Montserrat;font-size:17px;font-weight:600;font-style:normal;text-transform:uppercase;letter-spacing:0.1px;line-height:1.5;}footer.site-footer .widget{font-family:Open Sans;font-size:14px;font-weight:300;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1.6;}footer.site-footer .genesis-nav-menu{font-family:Open Sans;font-size:14px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0.1px;line-height:1;}
+</style><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141688097-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141688097-1');
+</script>
+
+</head>
+<body class="post-template-default single single-post postid-899 single-format-standard wp-custom-logo full-width-content">
+	
+		<a id="skip" class="skip-link screen-reader-text" href="#kirhero-skip-link">Skip to content</a>
+	<!-- #here add skip links -->
+<div class="site-container">
+	
+	<!-- #top-bar -->
+		<!-- #top-bar-wrap -->
+	<!-- #site-header -->
+	
+	<header class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+			<!-- header-wrap -->
+		<div class="wrap">
+			
+			<!-- title-area -->
+			<div class="title-area" itemscope itemtype="http://schema.org/Brand">
+				<a href="https://pythonwarriors.com/" class="custom-logo-link" rel="home"><img width="210" height="75" src="https://pythonwarriors.com/wp-content/uploads/2021/04/cropped-pw_logo_v2_sm-2.png" class="custom-logo" alt="Python Warriors" decoding="async" /></a>											</div>
+			<!-- title-area -->
+			
+				
+	<div class="kirhero-mobile-menu-wrap">
+		<div class="kirhero-mobile-menu">
+	
+			<a id="kirhero-mobile-menu" href="#" class="mobile-menu">
+				<div class="hamburger" >
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<span class="kirhero-text">MENU</span>
+			</a>
+		</div>
+	</div>
+<nav class="nav-primary genesis-responsive-menu">
+<div class="wrap" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	
+	<ul id="menu-menu-1" class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows"><li id="menu-item-854" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-854"><a href="https://pythonwarriors.com/category/python/"><span class="text-wrap">Python</span></a></li>
+<li id="menu-item-855" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-855"><a href="https://pythonwarriors.com/category/open-ai/"><span class="text-wrap">OPEN AI</span></a></li>
+<li id="menu-item-856" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-856"><a href="https://pythonwarriors.com/category/rasa/"><span class="text-wrap">Rasa</span></a></li>
+<li id="menu-item-857" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-857"><a href="https://pythonwarriors.com/tag/fastapi/"><span class="text-wrap">FASTAPI</span></a></li>
+<li id="menu-item-861" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-861"><a href="https://pythonwarriors.com/tag/gpt-3/"><span class="text-wrap">GPT-3</span></a></li>
+<li id="menu-item-862" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-862"><a href="https://pythonwarriors.com/tag/gpt-4/"><span class="text-wrap">GPT-4</span></a></li>
+<li id="menu-item-863" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-863"><a href="https://pythonwarriors.com/tag/chatgpt/"><span class="text-wrap">CHATGPT</span></a></li>
+<li id="menu-item-858" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-858"><a href="https://pythonwarriors.com/about-us/"><span class="text-wrap">About us</span></a></li>
+<li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://pythonwarriors.com/contact-us/"><span class="text-wrap">Contact us</span></a></li>
+<li id="menu-item-860" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-860"><a href="https://pythonwarriors.com/privacy-policy/"><span class="text-wrap">Privacy Policy</span></a></li>
+<li class="menu-item">
+			<a href="#search" class="site-search-toggle search-header-replace-toggle" data-wpel-link="internal">
+				<span class="fa fa-search" aria-hidden="true"></span></span>
+			</a>
+		</li></ul>	
+</div>
+</nav>
+
+<div id="searchform-header-replace" class="header-searchform-wrap">
+	<div class="wrap">
+		<form method="get" action="https://pythonwarriors.com/" role="search" class="header-searchform">
+					<input type="search" name="s" autocomplete="off" placeholder="Search..."/>
+					<input type="hidden" name="lang" value="Search"/>
+				</form>		<span id="searchform-header-replace-close" class="fa fa-times"></span>
+	</div>
+</div><!-- #searchform-header-replace -->
+	
+		</div><!-- header-wrap -->
+			
+</header>
+
+
+	<div id="mobile-sider" class="mobile-sider" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">		
+		
+		<a href="#" class="sidr-class-toggle-sidr-close">
+			<i class="fa fa-times-circle-o" aria-hidden="true"></i><span class="sidr-class-close-text">Close Menu</span>
+		</a>
+	
+			<ul id="menu-menu-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-854"><a href="https://pythonwarriors.com/category/python/">Python</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-855"><a href="https://pythonwarriors.com/category/open-ai/">OPEN AI</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-856"><a href="https://pythonwarriors.com/category/rasa/">Rasa</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-857"><a href="https://pythonwarriors.com/tag/fastapi/">FASTAPI</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-861"><a href="https://pythonwarriors.com/tag/gpt-3/">GPT-3</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-862"><a href="https://pythonwarriors.com/tag/gpt-4/">GPT-4</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-863"><a href="https://pythonwarriors.com/tag/chatgpt/">CHATGPT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-858"><a href="https://pythonwarriors.com/about-us/">About us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="https://pythonwarriors.com/contact-us/">Contact us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-860"><a href="https://pythonwarriors.com/privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item">
+			<a href="#search" class="site-search-toggle search-header-replace-toggle" data-wpel-link="internal">
+				<span class="fa fa-search" aria-hidden="true"></span></span>
+			</a>
+		</li></ul>			<!-- .mobile-menu-search -->
+			<div id="mobile-menu-search" class="mobile-menu-search" >
+				<form method="get" action="https://pythonwarriors.com/" class="mobile-searchform">
+					<input type="search" name="s" autocomplete="off" placeholder="Search" />
+					<button type="submit" class="searchform-submit">
+						<i class="fa fa-icon-magnifier" aria-hidden="true"></i>
+					</button><input type="hidden" name="post_type" value=""/>
+				</form>			</div><!-- .mobile-menu-search -->		
+	</div>
+
+		
+
+		
+	
+<div class="site-inner-wrap"></div>
+
+
+
+	<!-- #site-header -->		
+	
+
+<header class="general-page-header centered-general-page-header">
+
+	
+	<div class="wrap">
+
+		<h2 class="page-header-general-title" itemprop="headline">How to use Streamlit in Python</h2>
+
+				
+		<nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs"><h2 class="trail-browse"></h2><ul class="trail-items"><li class="trail-item trail-begin"><a href="https://pythonwarriors.com/" rel="home"><span>Home</span></a></li><li class="trail-item"><a href="https://pythonwarriors.com/category/python/"><span>Python</span></a></li><li class="trail-item trail-end"><span><span>How to use Streamlit in Python</span></span></li></ul></nav>
+	</div>
+
+	
+	
+</header><!-- .sub-header -->
+
+	
+	<!-- top future -->
+	
+<div >
+			<div class="thumbnail-link-banner" style="background-image: url(https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png);">
+			<img src="https://pythonwarriors.com/wp-content/themes/orionwp/assets/img/slider_blank_img_medium.gif">
+		</div><!-- .thumbnail -->
+	</div>
+
+	<!-- top future -->
+	
+		
+	<!-- content -->
+	<div class="site-inner">
+		
+			<!-- content-sidebar-wrap -->
+			<div class="content-sidebar-wrap b">
+				
+								<!-- #content -->
+				<main class="content b">
+					
+					
+<article id="post-899" class="post-899 post type-post status-publish format-standard has-post-thumbnail hentry category-python tag-streamlit entry has-media">
+	
+
+<header class="entry-header">
+	<h2 class="entry-title" itemprop="headline">How to use Streamlit in Python</h2><!-- .single-post-title -->
+</header><!-- .entry-header -->
+
+
+
+<div class="entry-meta">
+
+	
+		
+		
+		
+		
+	
+		
+		
+					<span class="meta-cat"><i class="fa fa-folder-o"></i> <a href="https://pythonwarriors.com/category/python/" rel="category tag">Python</a></span>
+		
+		
+	
+					<span class="meta-author" itemprop="name"><i class="fa fa-user-o"></i> <a href="https://pythonwarriors.com/author/anoop/" title="Posts by Admin" rel="author">Admin</a></span>
+		
+		
+		
+		
+	
+		
+					<span class="meta-date" itemprop="datePublished" pubdate><i class="fa fa-clock-o"></i> April 9, 2023</span>
+		
+		
+		
+		
+</div>
+
+
+
+<div class="entry-content" itemprop="text">
+	
+<figure class="wp-block-image size-full"><img decoding="async" width="1920" height="1080" src="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png" alt="" class="wp-image-911" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit.png 1920w, https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit-300x169.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit-1024x576.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit-768x432.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit-1536x864.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /></figure>
+
+
+
+<p>For any data scientist, representation of data becomes an important part in their daily life. Being able to see the <em><strong>WHAT/HOW/WHY</strong></em> of data gives more clear picture about the data. </p>
+
+
+
+<p>For better understanding check out the following images, one where we are seeing out data in a <em>dataframe</em> and in the next image see the <em>graphical representation</em> of the same data</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="234" src="https://pythonwarriors.com/wp-content/uploads/2023/04/image-4-1024x234.png" alt="" class="wp-image-901" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/image-4-1024x234.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-4-300x69.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-4-768x176.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-4-1536x352.png 1536w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-4.png 1830w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="649" src="https://pythonwarriors.com/wp-content/uploads/2023/04/image-5-1024x649.png" alt="" class="wp-image-902" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/image-5-1024x649.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-5-300x190.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-5-768x487.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-5.png 1195w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>As you can see we can understand more about the data from our <em>graphical representation</em> rather than seeing in a <em>dataframe</em>.</p>
+
+
+
+<p>We have google collab where we can use <code>matplotlib</code> to display our data graphically. But it has its limitations too.</p>
+
+
+
+<ul>
+<li>You will have to run it at your end to see the data </li>
+
+
+
+<li>It is not deployed anywhere, You will have to share your code for others to see the graphical representations.</li>
+</ul>
+
+
+
+<p>One way to solve this is to deploy a <code>webApp</code> which contains both frontend and backend to handle our needs.</p>
+
+
+
+<ul>
+<li><strong>frontend</strong> &#8211; To let user see data in graphical format  for better understanding.</li>
+
+
+
+<li><strong>backend</strong> &#8211; Processes and sends data to frontend.</li>
+</ul>
+
+
+
+<p>But only to show the data in pictorial format we have to create an entire frontend application. That&#8217;s some extra work right ? Not to forget that many of the <em>Backend devs/Data Scientists</em> do not have strong hand in frontend domain, Which makes this task extra lengthy.</p>
+
+
+
+<p>Well not worry, because <strong><span style="text-decoration: underline;"><em><a href="https://streamlit.io/" data-type="URL" data-id="https://streamlit.io/">Streamlit</a></em></span></strong> is here, which says </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="376" src="https://pythonwarriors.com/wp-content/uploads/2023/04/image-6-1024x376.png" alt="" class="wp-image-906" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/image-6-1024x376.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-6-300x110.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-6-768x282.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-6.png 1317w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Streamlit</strong> allows you to code everything in <em>python proframming language</em> which is the go to language for any Data scientist. Which makes it super easy to learn and implement. The documentation provided by Streamlit is super clean and easy to getting started.</p>
+
+
+
+<p>Keeping that in mind let&#8217;s try to create something with <em>Streamlit in python</em></p>
+
+
+
+<h2>Prerequisites</h2>
+
+
+
+<ul>
+<li>Streamlit library which can be installed using pip: <code>pip install streamlit</code></li>
+</ul>
+
+
+
+<h2>Coding Section</h2>
+
+
+
+<p>Once you have installed installed streamlit library, Create a file <code>app.py</code> and write the following code in it.</p>
+
+
+<pre class="wp-block-code" style="font-size:14px" aria-describedby="shcb-language-1" data-shcb-language-name="Python" data-shcb-language-slug="python"><link rel='stylesheet' id='syntax-highlighting-code-block-css' href='https://pythonwarriors.com/wp-content/plugins/syntax-highlighting-code-block/vendor/scrivo/highlight-php/styles/default.css' type='text/css' media='all' /><style>.wp-block-code {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-code > div {
+	overflow: auto;
+}
+
+.shcb-language {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+.hljs {
+	box-sizing: border-box;
+}
+
+.hljs.shcb-code-table {
+	display: table;
+	width: 100%;
+}
+
+.hljs.shcb-code-table > .shcb-loc {
+	color: inherit;
+	display: table-row;
+	width: 100%;
+}
+
+.hljs.shcb-code-table .shcb-loc > span {
+	display: table-cell;
+}
+
+.wp-block-code code.hljs:not(.shcb-wrap-lines) {
+	white-space: pre;
+}
+
+.wp-block-code code.hljs.shcb-wrap-lines {
+	white-space: pre-wrap;
+}
+
+.hljs.shcb-line-numbers {
+	border-spacing: 0;
+	counter-reset: line;
+}
+
+.hljs.shcb-line-numbers > .shcb-loc {
+	counter-increment: line;
+}
+
+.hljs.shcb-line-numbers .shcb-loc > span {
+	padding-left: 0.75em;
+}
+
+.hljs.shcb-line-numbers .shcb-loc::before {
+	border-right: 1px solid #ddd;
+	content: counter(line);
+	display: table-cell;
+	padding: 0 0.75em;
+	text-align: right;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 1%;
+}
+</style><div><code class="hljs language-python shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-keyword">import</span> streamlit <span class="hljs-keyword">as</span> st
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span>st.write(<span class="hljs-string">"""</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-string">    # Hello World from Streamlit</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-string">    ## Streamlit supports Markdown too</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-string">    ` This makes it so much good to use`</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-string">"""</span>)
+</span></span></code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Python</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">python</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Save the file and to run it simply type: <code>streamlit run app.py</code> in your terminal. It will launch a server and we can check out our very first streamlit app in a browser. If everything worked correctly, You will see this in your browser.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="515" src="https://pythonwarriors.com/wp-content/uploads/2023/04/image-7-1024x515.png" alt="" class="wp-image-908" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/image-7-1024x515.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-7-300x151.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-7-768x386.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-7-1536x773.png 1536w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-7.png 1851w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Congratulations on your very first streamlit app 👏. </p>
+
+
+
+<p>Now let&#8217;s do more with our app. </p>
+
+
+
+<p>For our case we are going to use this CSV file <a href="https://streamlit-demo-data.s3-us-west-2.amazonaws.com/agri.csv.gz" data-type="URL" data-id="https://streamlit-demo-data.s3-us-west-2.amazonaws.com/agri.csv.gz"><strong><span style="text-decoration: underline;">Agriculture Stats for Countries</span></strong></a> </p>
+
+
+<pre class="wp-block-code" style="font-size:14px" aria-describedby="shcb-language-2" data-shcb-language-name="Python" data-shcb-language-slug="python"><div><code class="hljs language-python shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span><span class="hljs-meta">@st.cache_data</span>
+</span></span><span class='shcb-loc'><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_UN_data</span><span class="hljs-params">()</span>:</span>
+</span></span><span class='shcb-loc'><span>    AWS_BUCKET_URL = <span class="hljs-string">"https://streamlit-demo-data.s3-us-west-2.amazonaws.com"</span>
+</span></span><span class='shcb-loc'><span>    df = pd.read_csv(AWS_BUCKET_URL + <span class="hljs-string">"/agri.csv.gz"</span>)
+</span></span><span class='shcb-loc'><span>
+</span></span><span class='shcb-loc'><span>    <span class="hljs-keyword">return</span> df.set_index(<span class="hljs-string">"Region"</span>)
+</span></span></code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Python</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">python</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Let&#8217;s break down our code</p>
+
+
+
+<ul>
+<li><strong>@st.cache_data</strong>: In simple words it caches the data, if you were to call <code>get_UN_data</code> again then it will not download the CSV again or  do any of it again. It will simply pick from the cache and return it. This makes it fast.</li>
+</ul>
+
+
+
+<p>Let&#8217;s see our data in all the chart format. To do that add the following code in your <code>app.py</code> file</p>
+
+
+<pre class="wp-block-code" style="font-size:14px" aria-describedby="shcb-language-3" data-shcb-language-name="Python" data-shcb-language-slug="python"><div><code class="hljs language-python shcb-code-table shcb-line-numbers"><span class='shcb-loc'><span>df = get_UN_data()
+</span></span><span class='shcb-loc'><span>st.line_chart(df)
+</span></span><span class='shcb-loc'><span>st.area_chart(df)
+</span></span><span class='shcb-loc'><span>st.bar_chart(df)
+</span></span><span class='shcb-loc'><span>
+</span></span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">Python</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">python</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Keep in mind that we are just plotting the entire data on a chart as that is our goal here. Re run the code and check your browser. All the graphs are plotted with just 3 extra lines of code. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="515" src="https://pythonwarriors.com/wp-content/uploads/2023/04/image-8-1024x515.png" alt="" class="wp-image-909" srcset="https://pythonwarriors.com/wp-content/uploads/2023/04/image-8-1024x515.png 1024w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-8-300x151.png 300w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-8-768x386.png 768w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-8-1536x773.png 1536w, https://pythonwarriors.com/wp-content/uploads/2023/04/image-8.png 1853w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Voila that&#8217;s it. </p>
+
+
+
+<p>Here is what more you can do with <strong>Streamlit</strong> in python</p>
+
+
+
+<ul>
+<li>Create apps to showcase your ML projects </li>
+
+
+
+<li>Create multipage apps </li>
+
+
+
+<li>Deploy your code for the world to see for free using streamlit</li>
+</ul>
+
+
+
+<p>That&#8217;s it folks for this blog. For starting your python journey with us checkout <strong><a rel="noreferrer noopener" href="https://pythonwarriors.com/python-basics/" data-type="post" data-id="27" target="_blank"><span style="text-decoration: underline;">Python Basics</span></a></strong> and do checkout <a rel="noreferrer noopener" href="https://docs.streamlit.io/" data-type="URL" data-id="https://docs.streamlit.io/" target="_blank"><strong><span style="text-decoration: underline;">Streamlit Documentation</span></strong></a></p>
+</div><!-- .entry -->
+
+<div class="post-tags">
+	<span class="post-tags-span">Tags:</span><a href="https://pythonwarriors.com/tag/streamlit/" rel="tag">streamlit</a></div>
+
+
+	<nav class="navigation post-navigation" aria-label=" ">
+		<h2 class="screen-reader-text"> </h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://pythonwarriors.com/using-the-detoxify-library-in-python-a-comprehensive-guide/" rel="prev"><span class="nav-title-main">Previous Post</span><span class="nav-post-title">Using the Detoxify Library in Python: A Comprehensive Guide</span></a></div><div class="nav-next"><a href="https://pythonwarriors.com/build-chatbot-using-gpt-4-and-streamlit-in-python/" rel="next"><span class="nav-title-main">Next Post</span><span class="nav-post-title">Build Chatbot using GPT-4 and Streamlit in Python</span></a></div></div>
+	</nav>
+
+	
+	<section class="related-posts">
+
+		<h3 class="theme-heading related-posts-title section-head section-head-style1">
+			<span class="text section-title">You Might Also Like</span>
+		</h3>
+
+		<div class="kirhero-row">
+
+			
+				
+				<article class="related-post one-third first post-914 post type-post status-publish format-standard has-post-thumbnail hentry category-open-ai category-python tag-gpt-4 tag-streamlit entry has-media">
+
+					
+						<figure class="related-post-media">
+
+							<a href="https://pythonwarriors.com/build-chatbot-using-gpt-4-and-streamlit-in-python/" class="related-thumb">
+
+								<img width="360" height="240" src="https://pythonwarriors.com/wp-content/uploads/2023/04/streamlit-gpt4-360x240.png" class="attachment-kirhero-blog size-kirhero-blog wp-post-image" alt="Build Chatbot using GPT-4 and Streamlit in Python" decoding="async" loading="lazy" width="218" itemprop="image" />
+							</a>
+
+						</figure>
+
+					
+					<h3 class="related-post-title">
+						<a href="https://pythonwarriors.com/build-chatbot-using-gpt-4-and-streamlit-in-python/" title="Build Chatbot using GPT-4 and Streamlit in Python" rel="bookmark">Build Chatbot using GPT-4 and Streamlit in Python</a>
+					</h3><!-- .related-post-title -->
+									
+				</article><!-- .related-post -->
+				
+
+			
+				
+				<article class="related-post one-third post-404 post type-post status-publish format-standard has-post-thumbnail hentry category-rasa tag-rasa tag-whatsapp entry has-media">
+
+					
+						<figure class="related-post-media">
+
+							<a href="https://pythonwarriors.com/how-to-connect-whatsapp-with-rasa-chatbot/" class="related-thumb">
+
+								<img width="360" height="240" src="https://pythonwarriors.com/wp-content/uploads/2023/03/Rasa-WHATSAPP-360x240.png" class="attachment-kirhero-blog size-kirhero-blog wp-post-image" alt="How to connect WhatsApp with Rasa Chatbot" decoding="async" loading="lazy" width="218" itemprop="image" />
+							</a>
+
+						</figure>
+
+					
+					<h3 class="related-post-title">
+						<a href="https://pythonwarriors.com/how-to-connect-whatsapp-with-rasa-chatbot/" title="How to connect WhatsApp with Rasa Chatbot" rel="bookmark">How to connect WhatsApp with Rasa Chatbot</a>
+					</h3><!-- .related-post-title -->
+									
+				</article><!-- .related-post -->
+				
+
+			
+				
+				<article class="related-post one-third post-464 post type-post status-publish format-standard has-post-thumbnail hentry category-open-ai tag-bert tag-gpt-3 tag-transformer-xl entry has-media">
+
+					
+						<figure class="related-post-media">
+
+							<a href="https://pythonwarriors.com/a-comprehensive-comparison-of-gpt-3-bert-and-transformer-xl/" class="related-thumb">
+
+								<img width="360" height="240" src="https://pythonwarriors.com/wp-content/uploads/2023/03/My-project-1-2-360x240.png" class="attachment-kirhero-blog size-kirhero-blog wp-post-image" alt="A Comprehensive Comparison of GPT-3, BERT, and Transformer-XL" decoding="async" loading="lazy" width="218" itemprop="image" />
+							</a>
+
+						</figure>
+
+					
+					<h3 class="related-post-title">
+						<a href="https://pythonwarriors.com/a-comprehensive-comparison-of-gpt-3-bert-and-transformer-xl/" title="A Comprehensive Comparison of GPT-3, BERT, and Transformer-XL" rel="bookmark">A Comprehensive Comparison of GPT-3, BERT, and Transformer-XL</a>
+					</h3><!-- .related-post-title -->
+									
+				</article><!-- .related-post -->
+				
+
+			
+		</div>
+
+	</section><!-- .related-posts -->
+
+	
+
+
+<div id="comments" class="entry-comments">
+
+	
+</div><!-- #comments -->
+
+</article>				</main><!-- #content -->
+				
+								
+				<!-- #widget -->
+								<!-- #widget -->
+	
+								
+			</div><!-- content-sidebar-wrap -->
+
+			<!-- #widget -->
+					
+			<!-- #widget -->	
+	</div><!-- content -->
+
+
+<!-- footer -->
+	
+	<footer class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			
+			<!-- wrap -->		
+			<div class="wrap">
+					
+				<!-- widgets --><div><div class="has-grid one-half first"><section id="search-5" class="widget widget_search"><h2 class="widget-title">Looking for something ?</h2><form method="get" action="https://pythonwarriors.com/" role="search" class="header-searchform">
+					<input type="search" name="s" autocomplete="off" placeholder="Search..."/>
+					<input type="hidden" name="lang" value="Search"/>
+				</form></section><section id="block-8" class="widget widget_block widget_text">
+<p class="has-white-color has-text-color"><strong><a href="https://pythonwarriors.com/about-us/" data-type="URL" data-id="https://pythonwarriors.com/about-us/">About us</a><br><a href="https://pythonwarriors.com/contact-us/" data-type="URL" data-id="https://pythonwarriors.com/contact-us/">Contact us</a><br><a href="https://pythonwarriors.com/privacy-policy/" data-type="URL" data-id="https://pythonwarriors.com/privacy-policy/">Privacy policy</a></strong></p>
+</section></div><div class="has-grid one-half"><section id="text-3" class="widget widget_text"><h2 class="widget-title">Have something to say ?</h2>			<div class="textwidget"><p>Drop us a mail at <strong>admin@pythonwarriors.com</strong></p>
+</div>
+		</section></div><hr></div>
+						
+				<p class="footer-p">
+						
+				
+					Made with ❤️ and Chai ( Tea ) ☕					| Theme by <a href="https://themesinfo.com/" title="WordPress Theme Detector">WordPress Theme Detector</a>
+                         					
+						
+									</p>
+			</div><!-- wrap -->	
+	</footer><!-- footer -->
+
+
+
+</div><!-- #site-container -->
+<link rel='stylesheet' id='whp3627tw-bs4.css-css' href='https://pythonwarriors.com/wp-content/plugins/wp-security-hardening/modules/inc/assets/css/tw-bs4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='whp2857font-awesome.min.css-css' href='https://pythonwarriors.com/wp-content/plugins/wp-security-hardening/modules/inc/fa/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='whp2041front.css-css' href='https://pythonwarriors.com/wp-content/plugins/wp-security-hardening/modules/css/front.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/pythonwarriors.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
+<script type='text/javascript' id='wd-asl-ajaxsearchlite-js-before'>
+window.ASL = typeof window.ASL !== 'undefined' ? window.ASL : {}; window.ASL.wp_rocket_exception = "DOMContentLoaded"; window.ASL.ajaxurl = "https:\/\/pythonwarriors.com\/wp-admin\/admin-ajax.php"; window.ASL.backend_ajaxurl = "https:\/\/pythonwarriors.com\/wp-admin\/admin-ajax.php"; window.ASL.js_scope = "jQuery"; window.ASL.asl_url = "https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/"; window.ASL.detect_ajax = 1; window.ASL.media_query = 4769; window.ASL.version = 4769; window.ASL.pageHTML = ""; window.ASL.additional_scripts = [{"handle":"wd-asl-ajaxsearchlite","src":"https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-prereq.js","prereq":[]},{"handle":"wd-asl-ajaxsearchlite-core","src":"https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-core.js","prereq":[]},{"handle":"wd-asl-ajaxsearchlite-vertical","src":"https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-results-vertical.js","prereq":["wd-asl-ajaxsearchlite"]},{"handle":"wd-asl-ajaxsearchlite-autocomplete","src":"https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-autocomplete.js","prereq":["wd-asl-ajaxsearchlite"]},{"handle":"wd-asl-ajaxsearchlite-load","src":"https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-load.js","prereq":["wd-asl-ajaxsearchlite-autocomplete"]}]; window.ASL.script_async_load = false; window.ASL.init_only_in_viewport = true; window.ASL.font_url = "https:\/\/pythonwarriors.com\/wp-content\/plugins\/ajax-search-lite\/css\/fonts\/icons2.woff2"; window.ASL.css_async = false; window.ASL.highlight = {"enabled":false,"data":[]}; window.ASL.analytics = {"method":0,"tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};
+</script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-prereq.js' id='wd-asl-ajaxsearchlite-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-core.js' id='wd-asl-ajaxsearchlite-core-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-results-vertical.js' id='wd-asl-ajaxsearchlite-vertical-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-autocomplete.js' id='wd-asl-ajaxsearchlite-autocomplete-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-load.js' id='wd-asl-ajaxsearchlite-load-js'></script>
+<script type='text/javascript' src='https://pythonwarriors.com/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-wrapper.js' id='wd-asl-ajaxsearchlite-wrapper-js'></script>
+
+</body>
+</html>
+
+
+<!-- Page cached by LiteSpeed Cache 7.1 on 2025-06-13 00:19:54 -->
